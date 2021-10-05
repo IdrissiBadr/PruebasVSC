@@ -14,3 +14,4 @@ db.inventory.find( { status: "D" } )
 $eq
 */
 db.inventory.find( { status: { $eq: "D" } } )
+db.inventory.find( { qty: { $eq: 20 } } )

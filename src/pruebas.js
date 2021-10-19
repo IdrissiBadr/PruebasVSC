@@ -63,3 +63,11 @@ db.inventory.find(
     qty: {$gte:20 , $lte:25}
   }
 )
+db.inventory.find(
+  { 
+      $or:[
+        {"item.name": {$eq:"cd"}},
+        {qty: {$eq:20}}
+      ]
+  }
+)      

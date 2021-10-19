@@ -58,3 +58,8 @@
       ]
   }
 )
+db.inventory.find(
+  {
+    qty: {$gte:20 , $lte:25}
+  }
+)

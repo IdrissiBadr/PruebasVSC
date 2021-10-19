@@ -27,3 +27,26 @@
     { _id: 5, item: { name: "mn", code: "000" }, qty: 20, tags: [ [ "A", "B" ], "C" ] },
    ]    
  )
+ db.inventory.deleteMany({})
+ db.inventory.insertMany(
+   [
+    { _id: 1, item: { name: "ab", code: "123" }, qty: 15, tags: [ "A", "B", "C" ] },
+    { _id: 2, item: { name: "cd", code: "123" }, qty: 20, tags: [ "B" ] },
+    { _id: 3, item: { name: "ij", code: "456" }, qty: 25, tags: [ "A", "B" ] },
+    { _id: 4, item: { name: "xy", code: "456" }, qty: 30, tags: [ "B", "A" ] },
+    { _id: 5, item: { name: "mn", code: "000" }, qty: 20, tags: [ [ "A", "B" ], "C" ] },
+   ]
+ )
+ db.inventory.find( { "item.name": { $eq: "ab" } } )
+ db.inventory.find( { tags: { $eq: "B" } } )
+ db.inventory.find( { tags: { $eq: [ "A", "B" ] } } )
+ db.inventory.find( { qty: { $in: [ 20, 15 ] } } )
+ db.inventory.find( { qty: { $nin: [ 25, 15 ] } } )
+ db.inventory.find(
+    { 
+        $and:[
+          {"item.name": {$eq:"cd"}},
+          {"item.code": {$eq:"123"}}
+        ]
+    }
+ )      

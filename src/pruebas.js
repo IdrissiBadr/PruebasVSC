@@ -50,3 +50,11 @@
         ]
     }
  )      
+ db.inventory.find(
+  { 
+      $and:[
+        {qty: {$gte:15}},
+        {qty: {$lte:20}}
+      ]
+  }
+)

@@ -21,3 +21,4 @@
   db.inventory.find( {dateA: {$gte: new Date("2020-05-01") } } )
   db.inventory.find( {año: {$eq: new Date("2017-07-31").getFullYear() } } )
   db.inventory.find( {mes: {$gt: new Date("2017-05-31").getMonth()+1 } } )
+  

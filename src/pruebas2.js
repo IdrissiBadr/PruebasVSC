@@ -13,5 +13,8 @@
   db.inventory.find( { tags: {$all: ["red", "blank" ] } } )
   db.inventory.find( { item: "journal"} )
   db.inventory.find( { tags: "red"} )
+  db.inventory.find( { tags: {$eq: "red" } } )
   db.inventory.find( {qty: {$gt: 45,$lt: 100 } } )
   db.inventory.find( {dim_cm: {$gt: 21 } } )
+  db.inventory.find( {dim_cm: {$gt: 15,$lt: 20 } } )
+  db.inventory.find( {dim_cm: {$elemMatch: {$gt: 15,$lt: 20 } } } )
